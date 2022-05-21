@@ -20,10 +20,15 @@ public class ChenPhanTuVaoMang {
         int value = scanner.nextInt();
         System.out.println("Nhập giá trị index bạn muốn chèn tại mảng");
         int index = scanner.nextInt();
+        if(index <= 1 || index >= arr.length-1) {
+            System.out.println("Không chèn vào được");
+        } else  {
         for (int i = arrNew.length-1; i  > index ; i--) {
-            arrNew[i] = arrNew[i-1];
-        }
+                arrNew[i] = arrNew[i-1];
+            }
         arrNew[index] = value;
         display(arrNew);
+        }
+
     }
 }
