@@ -77,6 +77,9 @@ public class SoThanhChu {
         if(donVi == 0) {
             donVi = -1;
         }
+        if(hangChuc  == 1) {
+            return tuMuoiDenHaiMuoi(number);
+        }
         return hangChuc(hangChuc) + " " + donVi(donVi);
     }
 }
