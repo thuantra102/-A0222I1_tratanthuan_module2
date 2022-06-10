@@ -7,7 +7,6 @@ public class Calculator {
     public static final char DIVISION   = '/';
 
 
-
     public static int calculate(int firstOperand , int secondOperand, char operator ) {
         switch (operator ) {
             case ADDITION:
