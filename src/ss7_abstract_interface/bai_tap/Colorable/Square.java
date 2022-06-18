@@ -2,7 +2,7 @@ package ss7_abstract_interface.bai_tap.Colorable;
 
 
 
-public class Square extends Shape implements Colorable {
+public class Square extends Shape implements Colorable<S> {
     private double height = 1;
 
     public Square(double height) {
