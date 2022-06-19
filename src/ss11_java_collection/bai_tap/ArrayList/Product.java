@@ -1,4 +1,4 @@
-package ss11_java_collection.bai_tap;
+package ss11_java_collection.bai_tap.ArrayList;
 
 import org.omg.CosNaming.NamingContextExtPackage.StringNameHelper;
 

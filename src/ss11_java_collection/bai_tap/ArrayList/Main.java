@@ -1,8 +1,5 @@
-package ss11_java_collection.bai_tap;
+package ss11_java_collection.bai_tap.ArrayList;
 
-import javax.crypto.spec.PSource;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Scanner;
 
 public class Main {
@@ -77,8 +74,7 @@ public class Main {
     public static void searchProduct() {
         System.out.println("Please Enter Name Of The Product That You Want To Search");
         String name = scanner.nextLine();
-        productList.findProduct(name);
-
+        System.out.println(productList.findProduct(name));
     }
     public static void sortAscending() {
         productList.sortAscending();

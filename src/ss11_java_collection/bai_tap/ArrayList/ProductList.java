@@ -1,12 +1,7 @@
-package ss11_java_collection.bai_tap;
+package ss11_java_collection.bai_tap.ArrayList;
 
-import org.omg.CosNaming.NamingContextExtPackage.StringNameHelper;
-import ss11_java_collection.thuc_hanh.Compare.Student;
-
-import java.text.CollationElementIterator;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 import java.util.Scanner;
 
 public class ProductList  {
@@ -51,7 +46,7 @@ public class ProductList  {
         for (int i = 0; i <this.productList.size() ; i++) {
             Product pr = this.productList.get(i);
             if(pr.getName().equals(productName)) {
-                return this.productList.toString();
+                return this.productList.get(i).toString();
             }
 
         }
