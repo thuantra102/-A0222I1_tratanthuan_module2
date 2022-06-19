@@ -19,43 +19,43 @@ public class ProductList  {
     }
 
     public void addProduct(Product newProduct) {
-        if(findProduct(newProduct.getName())>=0) {
-            System.out.println("San pham da duoc khai bao");
+        if(findId(newProduct.getId())>=0) {
+            System.out.println("The Product Is Already In The List");
         } else  {
             productList.add(newProduct);
         }
     }
-    public void fixId(String id) {
+    public void modifyProductById(String id) {
         int index = findId(id);
         if(index >= 0) {
-            System.out.println("Nhap ten san pham ban muon sua");
+            System.out.println("Please Enter The New Name For This Product");
             String name = scanner.nextLine();
             this.productList.get(index).setName(name);
         } else  {
-            System.out.println("Id bi sai");
+            System.out.println("Id Is Incorrect");
         }
     }
 
-    public void deleteId(String id) {
+    public void removeProductById(String id) {
         int index = findId(id);
         if(index >=0) {
             this.productList.remove(index);
 
         } else  {
-            System.out.println("Nhap sai id");
+            System.out.println("Id Is Incorrect");
         }
 
     }
 
-    private int findProduct(String productName) {
+    public String findProduct(String productName) {
         for (int i = 0; i <this.productList.size() ; i++) {
             Product pr = this.productList.get(i);
             if(pr.getName().equals(productName)) {
-                return  i;
+                return this.productList.toString();
             }
 
         }
-        return -1;
+        return null;
     }
     public int findId(String id) {
         for (int i = 0; i <this.productList.size() ; i++) {
@@ -68,7 +68,6 @@ public class ProductList  {
         return -1;
     }
     public void sortAscending() {
-//        Co the dung lop an danh de sai comparator cho nhanh
         Collections.sort(this.productList, new ComparePrice());
     }
     public void sortDescending() {
