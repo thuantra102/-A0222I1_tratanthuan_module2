@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Main {
     private static ProductList productList = new ProductList();
     private static Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
         boolean quite = false;
         int choice = 0;
@@ -12,7 +13,6 @@ public class Main {
         while (!quite)  {
             System.out.println("Enter your choice: ");
             choice = scanner.nextInt();
-
             scanner.nextLine();
             switch (choice) {
                 case 0:
@@ -31,7 +31,6 @@ public class Main {
                 default:defaultOption();break;
             }
         }
-
     }
     public static  void printInstruction() {
         System.out.print("\nPress ");
@@ -54,21 +53,19 @@ public class Main {
     public static void addProduct() {
         System.out.println("Please Enter The Name Of The Product");
         String name = scanner.nextLine();
-        System.out.println("Please Enter The Id Of The Product");
-        String id = scanner.nextLine();
         System.out.println("Please Enter The Price Of The Product");
         int price = scanner.nextInt();
-        productList.addProduct(new Product(name,id,price));
+        productList.addProduct(new Product(name,price));
         System.out.println("The Your Product Is Added To The List");
     }
     public static  void modifyProduct() {
         System.out.println("Please Enter If Of Product That You Want To Modify");
-        String id = scanner.nextLine();
+        int id = scanner.nextInt();
         productList.modifyProductById(id);
     }
     public static void removeProduct() {
         System.out.println("Please Enter If Of Product That You Want To Remove ");
-        String id = scanner.nextLine();
+        int id = scanner.nextInt();
         productList.removeProductById(id);
     }
     public static void searchProduct() {
@@ -84,9 +81,6 @@ public class Main {
         productList.sortDescending();
         System.out.println("The list Is Sorted In Descending Order");
     }
-
-
-
 }
 
 
