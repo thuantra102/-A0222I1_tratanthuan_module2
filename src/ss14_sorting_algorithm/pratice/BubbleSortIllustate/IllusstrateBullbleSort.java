@@ -36,7 +36,7 @@ public class IllusstrateBullbleSort {
                 }
             }
             /* Array may be sorted and next pass not needed */
-            if (needNextPass == false) {
+            if (!needNextPass) {
                 System.out.println("Array may be sorted and next pass not needed");
                 break;
             }
