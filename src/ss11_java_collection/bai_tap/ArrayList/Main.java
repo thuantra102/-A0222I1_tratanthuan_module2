@@ -54,7 +54,7 @@ public class Main {
         System.out.println("Please Enter The Name Of The Product");
         String name = scanner.nextLine();
         System.out.println("Please Enter The Price Of The Product");
-        int price = scanner.nextInt();
+        int price = Integer.parseInt(scanner.nextLine());
         productList.addProduct(new Product(name,price));
         System.out.println("The Your Product Is Added To The List");
     }
