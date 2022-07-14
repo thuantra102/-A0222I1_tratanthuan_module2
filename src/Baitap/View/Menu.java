@@ -32,7 +32,7 @@ public class Main {
                 case 2: addPhone(); break;
                 case 3: delete(); break;
                 case 4: search(); break;
-                case 5: update(); break;
+                case 5: phoneManage.writeFile(); break;
                 case 6: quite= true; break;
             }
         }
@@ -50,20 +50,31 @@ public class Main {
 
     }
     public static void delete()  {
-      boolean isExists;
-        do {
-            System.out.println("Nhap id");
-            int id = Integer.parseInt(scanner.nextLine());
+//      boolean isExists;
+//        do {
+//            System.out.println("Nhap id");
+//            int id = Integer.parseInt(scanner.nextLine());
+//            try {
+//                phoneManage.deleteById(id);
+//                isExists = false;
+//            }
+//            catch (NotFoundException e){
+//                System.out.println(e.getMessage());
+//                isExists = true;
+//            }
+//        } while (isExists);
+        while (true) {
+            System.out.println("Enter id");
+            int idPhone = Integer.parseInt(scanner.nextLine());
             try {
-                phoneManage.deleteById(id);
-                isExists = false;
-            }
-            catch (NotFoundException e){
+                phoneManage.deleteById(idPhone);
+                break;
+            }catch (NotFoundException e) {
                 System.out.println(e.getMessage());
-                isExists = true;
             }
-        } while (isExists);
+        }
     }
+
     public static void printPhone() {phoneManage.display();}
     public static void addPhone() {
         System.out.println("You want to add genuine or secondhand ");
@@ -113,10 +124,12 @@ public class Main {
     public static void update(){
         System.out.println("Enter id");
         int id = Integer.parseInt(scanner.nextLine());
-        Phone updatePhone = phoneManage.updatePhoneById(id);
-        if (updatePhone != null) {
+        int updatePhone = phoneManage.updatePhoneById(id);
+        if (updatePhone != -1) {
 
         }
-
+    }
+    public static void writeToFile() {
+        phoneManage.writeFile();
     }
 }
